@@ -23,6 +23,17 @@
             border: 1px solid #ddd;
             border-radius: 3px;
         }
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        .helptext {
+            color: #666;
+            font-size: 12px;
+            display: block;
+            margin-top: 5px;
+        }
         button {
             background-color: #28a745;
             color: white;
@@ -37,34 +48,113 @@
     <div class="signup-container">
         <h2>Registrarse</h2>
         
+        {% if form.errors %}
+            <div style="color: red; margin-bottom: 15px;">
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        {% endif %}
+
         <form method="post">
             {% csrf_token %}
             
+            {% for field in form %}
             <div class="form-group">
-                <label for="username">Usuario:</label>
-                <input type="text" id="username" name="username" required>
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.help_text %}
+                    <span class="helptext">{{ field.help_text }}</span>
+                {% endif %}
+                {% if field.errors %}
+                    <div class="error">
+                        {% for err in field.errors %}
+                            <div>{{ err }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                {% if field.name == 'username' %}
+                    <div id="username-warning" class="error" style="display:none"></div>
+                {% elif field.name == 'password1' %}
+                    <div id="password-warning" class="error" style="display:none"></div>
+                {% elif field.name == 'password2' %}
+                    <div id="password-match-warning" class="error" style="display:none"></div>
+                {% endif %}
             </div>
-            
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="password1">Contraseña:</label>
-                <input type="password" id="password1" name="password1" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="password2">Confirmar Contraseña:</label>
-                <input type="password" id="password2" name="password2" required>
-            </div>
+            {% endfor %}
             
             <button type="submit">Registrarse</button>
         </form>
-        <div style="text-align: center; margin-top: 15px;">
-            <p>¿Ya tienes cuenta? <a href="{% url 'login' %}">Inicia sesión aquí</a></p>
-        </div>
+        
+        <p style="text-align: center; margin-top: 15px;">
+            ¿Ya tienes cuenta? <a href="{% url 'login' %}">Inicia sesión aquí</a>
+        </p>
     </div>
+    <script>
+        (function(){
+            const usernameInput = document.querySelector('input[name="username"]');
+            const pw1 = document.querySelector('input[name="password1"]');
+            const pw2 = document.querySelector('input[name="password2"]');
+            const submitBtn = document.querySelector('button[type="submit"]');
+
+            function validateUsername() {
+                const warn = document.getElementById('username-warning');
+                if (!usernameInput) return true;
+                const val = usernameInput.value.trim();
+                const ok = /^[A-Za-z0-9_]{4,}$/.test(val);
+                if (!ok) {
+                    warn.style.display = 'block';
+                    warn.textContent = 'El nombre de usuario debe tener al menos 4 caracteres y sólo contener letras, números o guiones bajos.';
+                } else {
+                    warn.style.display = 'none';
+                    warn.textContent = '';
+                }
+                return ok;
+            }
+
+            function validatePasswordRequirements() {
+                const warn = document.getElementById('password-warning');
+                if (!pw1) return true;
+                const val = pw1.value;
+                const lengthOk = val.length >= 8;
+                const hasLetter = /[A-Za-z]/.test(val);
+                const hasNumber = /[0-9]/.test(val);
+                if (!lengthOk || !hasLetter || !hasNumber) {
+                    warn.style.display = 'block';
+                    warn.textContent = 'La contraseña debe tener al menos 8 caracteres, incluir letras y números.';
+                } else {
+                    warn.style.display = 'none';
+                    warn.textContent = '';
+                }
+                return lengthOk && hasLetter && hasNumber;
+            }
+
+            function validatePasswordMatch() {
+                const warn = document.getElementById('password-match-warning');
+                if (!pw1 || !pw2) return true;
+                if (pw2.value && pw1.value !== pw2.value) {
+                    warn.style.display = 'block';
+                    warn.textContent = 'Las contraseñas no coinciden.';
+                    return false;
+                }
+                warn.style.display = 'none';
+                warn.textContent = '';
+                return true;
+            }
+
+            function updateSubmitState(){
+                const ok = validateUsername() && validatePasswordRequirements() && validatePasswordMatch();
+                if (submitBtn) submitBtn.disabled = !ok;
+            }
+
+            if (usernameInput) usernameInput.addEventListener('input', updateSubmitState);
+            if (pw1) pw1.addEventListener('input', updateSubmitState);
+            if (pw2) pw2.addEventListener('input', updateSubmitState);
+
+            updateSubmitState();
+        })();
+    </script>
 </body>
 </html>

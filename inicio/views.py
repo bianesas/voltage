@@ -12,8 +12,9 @@ def pagina_protegida(request):
 # Create your views here.
 def inicio(request):
 
+    form = UserCreationForm()
     return render(request, 'signup.html', {
-        'form':UserCreationForm
+        'form': form
     })
 
 def signup(request):
