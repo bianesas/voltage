@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Off-Grid - Voltage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    Voltage<span>energía de todos</span>
+                </a>
+            </div>
+            <nav class="nav-links">
+                <div class="dropdown">
+                    <a href="#">Paneles <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="comofuncionan.html">Como funcionan</a>
+                        <a href="sistemaongrid.html">Sistema On-grid</a>
+                        <a href="sistemaoffgrid.html">Sistema Off-grid</a>
+                        <a href="sistemahibrido.html">Sistema híbrido</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#">Quienes somos <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="nuestrahistoria.html">Nuestra historia</a>
+                    </div>
+                </div>
+                <a href="index.html#test">Test</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Sistema Off-Grid</h1>
+            <p>Independencia total de la red eléctrica - Energía donde sea</p>
+        </div>
+    </section>
+
+    <!-- Descripción del Sistema -->
+    <section class="section">
+        <div class="content-container">
+            <h2>¿Qué es un Sistema Off-Grid?</h2>
+            <p>El sistema fotovoltaico aislado (Off-Grid) te brinda completa independencia energética. Es la solución perfecta para lugares sin acceso a la red eléctrica o donde los cortes de luz son frecuentes.</p>
+            
+            <div class="system-features">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Almacenamiento en Baterías</h3>
+                        <p>Tu energía solar se almacena en bancos de baterías para uso nocturno o días nublados.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-unlink"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Independencia Total</h3>
+                        <p>Zero dependencia de la red eléctrica. Tu propio sistema autónomo de energía.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Para Lugares Remotos</h3>
+                        <p>Ideal para zonas rurales, cabañas, campings, minas y proyectos alejados de la civilización.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cómo Funciona -->
+    <section class="section" style="background-color: var(--light);">
+        <div class="section-title">
+            <h2>¿Cómo Funciona el Sistema Off-Grid?</h2>
+            <p>Autonomía energética las 24 horas del día</p>
+        </div>
+        
+        <div class="process-steps">
+            <div class="process-item">
+                <div class="process-icon">
+                    <i class="fas fa-sun"></i>
+                </div>
+                <div class="process-text">
+                    <h3>1. Generación y Carga Diurna</h3>
+                    <p>Durante el día, los paneles cargan las baterías mientras alimentan tu consumo inmediato.</p>
+                </div>
+            </div>
+            
+            <div class="process-item">
+                <div class="process-icon">
+                    <i class="fas fa-car-battery"></i>
+                </div>
+                <div class="process-text">
+                    <h3>2. Almacenamiento Energético</h3>
+                    <p>La energía sobrante se almacena en baterías de litio o plomo-ácido para uso posterior.</p>
+                </div>
+            </div>
+            
+            <div class="process-item">
+                <div class="process-icon">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="process-text">
+                    <h3>3. Autonomía Nocturna</h3>
+                    <p>Por la noche o en días nublados, las baterías proveen energía continua a tu hogar.</p>
+                </div>
+            </div>
+            
+            <div class="process-item">
+                <div class="process-icon">
+                    <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <div class="process-text">
+                    <h3>4. Gestión Inteligente</h3>
+                    <p>El controlador regula carga/descarga optimizando la vida útil de las baterías.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Componentes Específicos -->
+    <section class="section">
+        <div class="section-title">
+            <h2>Componentes del Sistema Off-Grid</h2>
+            <p>Elementos esenciales para tu independencia energética</p>
+        </div>
+        
+        <div class="components-grid">
+            <div class="component-card">
+                <div class="component-icon">
+                    <i class="fas fa-solar-panel"></i>
+                </div>
+                <h3>Paneles Solares</h3>
+                <p>Módulos de alta eficiencia dimensionados según tu consumo y ubicación geográfica.</p>
+            </div>
+            
+            <div class="component-card">
+                <div class="component-icon">
+                    <i class="fas fa-car-battery"></i>
+                </div>
+                <h3>Banco de Baterías</h3>
+                <p>Baterías de litio (larga duración) o plomo-ácido (económicas) para almacenamiento.</p>
+            </div>
+            
+            <div class="component-card">
+                <div class="component-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3>Controlador de Carga</h3>
+                <p>Regula la carga de las baterías evitando sobrecargas y descargas profundas.</p>
+            </div>
+            
+            <div class="component-card">
+                <div class="component-icon">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+                <h3>Inversor Off-Grid</h3>
+                <p>Convierte la energía DC de las baterías a AC para tus electrodomésticos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="section" style="background-color: var(--light);">
+        <div class="section-title">
+            <h2>Ventajas del Sistema Off-Grid</h2>
+            <p>Libertad energética sin límites</p>
+        </div>
+        
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <i class="fas fa-independence"></i>
+                <h4>Independencia Total</h4>
+                <p>Cero facturas de luz y total independencia de cortes o problemas de la red.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h4>Instalación en Cualquier Lugar</h4>
+                <p>Lleva energía a lugares donde la red eléctrica nunca llegará.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <i class="fas fa-bolt"></i>
+                <h4>Energía 24/7</h4>
+                <p>Electricidad continua día y noche, sin interrupciones.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <i class="fas fa-shield-alt"></i>
+                <h4>Preparado para Emergencias</h4>
+                <p>Sistema resiliente ante desastres naturales o cortes prolongados.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ideal para -->
+    <section class="section">
+        <div class="section-title">
+            <h2>¿Para quién es Ideal?</h2>
+            <p>Perfecto para estos casos específicos</p>
+        </div>
+        
+        <div class="ideal-grid">
+            <div class="ideal-card">
+                <i class="fas fa-cabin"></i>
+                <h4>Cabañas y Refugios</h4>
+                <p>Viviendas en zonas rurales sin acceso a la red eléctrica.</p>
+            </div>
+            
+            <div class="ideal-card">
+                <i class="fas fa-tractor"></i>
+                <h4>Campos y Agricultura</h4>
+                <p>Bombeo de agua, iluminación y equipos en zonas agrícolas.</p>
+            </div>
+            
+            <div class="ideal-card">
+                <i class="fas fa-campground"></i>
+                <h4>Turismo Aventura</h4>
+                <p>Ecolodges, campings y proyectos de turismo sostenible.</p>
+            </div>
+            
+            <div class="ideal-card">
+                <i class="fas fa-tools"></i>
+                <h4>Proyectos Especiales</h4>
+                <p>Mineria, telecomunicaciones y proyectos de investigación.</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

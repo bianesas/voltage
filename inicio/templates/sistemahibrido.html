@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema Off-Grid - Voltage</title>
+    <title>Sistema Híbrido - Voltage</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
     <!-- Header -->
@@ -40,45 +41,45 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Sistema Off-Grid</h1>
-            <p>Independencia total de la red eléctrica - Energía donde sea</p>
+            <h1>Sistema Híbrido</h1>
+            <p>Lo mejor de ambos mundos - Energía solar con respaldo de baterías</p>
         </div>
     </section>
 
     <!-- Descripción del Sistema -->
     <section class="section">
         <div class="content-container">
-            <h2>¿Qué es un Sistema Off-Grid?</h2>
-            <p>El sistema fotovoltaico aislado (Off-Grid) te brinda completa independencia energética. Es la solución perfecta para lugares sin acceso a la red eléctrica o donde los cortes de luz son frecuentes.</p>
+            <h2>¿Qué es un Sistema Híbrido?</h2>
+            <p>El sistema híbrido combina las ventajas del On-Grid y Off-Grid. Permite conectarte a la red eléctrica mientras tienes el respaldo de baterías para cortes de luz o consumo nocturno.</p>
             
             <div class="system-features">
                 <div class="feature-item">
                     <div class="feature-icon">
-                        <i class="fas fa-battery-full"></i>
+                        <i class="fas fa-plug"></i>
                     </div>
                     <div class="feature-text">
-                        <h3>Almacenamiento en Baterías</h3>
-                        <p>Tu energía solar se almacena en bancos de baterías para uso nocturno o días nublados.</p>
+                        <h3>Conexión a Red + Baterías</h3>
+                        <p>Disfruta de los beneficios de la red eléctrica con la seguridad de las baterías de respaldo.</p>
                     </div>
                 </div>
                 
                 <div class="feature-item">
                     <div class="feature-icon">
-                        <i class="fas fa-unlink"></i>
+                        <i class="fas fa-bolt"></i>
                     </div>
                     <div class="feature-text">
-                        <h3>Independencia Total</h3>
-                        <p>Zero dependencia de la red eléctrica. Tu propio sistema autónomo de energía.</p>
+                        <h3>Energía en Cortes</h3>
+                        <p>Durante cortes de luz, las baterías alimentan tus circuitos críticos automáticamente.</p>
                     </div>
                 </div>
                 
                 <div class="feature-item">
                     <div class="feature-icon">
-                        <i class="fas fa-mountain"></i>
+                        <i class="fas fa-money-bill-wave"></i>
                     </div>
                     <div class="feature-text">
-                        <h3>Para Lugares Remotos</h3>
-                        <p>Ideal para zonas rurales, cabañas, campings, minas y proyectos alejados de la civilización.</p>
+                        <h3>Maximiza Ahorros</h3>
+                        <p>Usa energía de baterías en horario punta cuando la electricidad es más cara.</p>
                     </div>
                 </div>
             </div>
@@ -88,8 +89,8 @@
     <!-- Cómo Funciona -->
     <section class="section" style="background-color: var(--light);">
         <div class="section-title">
-            <h2>¿Cómo Funciona el Sistema Off-Grid?</h2>
-            <p>Autonomía energética las 24 horas del día</p>
+            <h2>¿Cómo Funciona el Sistema Híbrido?</h2>
+            <p>Inteligencia energética adaptativa</p>
         </div>
         
         <div class="process-steps">
@@ -98,8 +99,8 @@
                     <i class="fas fa-sun"></i>
                 </div>
                 <div class="process-text">
-                    <h3>1. Generación y Carga Diurna</h3>
-                    <p>Durante el día, los paneles cargan las baterías mientras alimentan tu consumo inmediato.</p>
+                    <h3>1. Autoconsumo Solar</h3>
+                    <p>Durante el día, consumes directamente la energía de tus paneles solares.</p>
                 </div>
             </div>
             
@@ -108,8 +109,8 @@
                     <i class="fas fa-car-battery"></i>
                 </div>
                 <div class="process-text">
-                    <h3>2. Almacenamiento Energético</h3>
-                    <p>La energía sobrante se almacena en baterías de litio o plomo-ácido para uso posterior.</p>
+                    <h3>2. Carga Inteligente de Baterías</h3>
+                    <p>El excedente solar carga las baterías en lugar de ir directamente a la red.</p>
                 </div>
             </div>
             
@@ -118,61 +119,61 @@
                     <i class="fas fa-moon"></i>
                 </div>
                 <div class="process-text">
-                    <h3>3. Autonomía Nocturna</h3>
-                    <p>Por la noche o en días nublados, las baterías proveen energía continua a tu hogar.</p>
+                    <h3>3. Consumo Nocturno de Baterías</h3>
+                    <p>Por la noche, consumes energía de las baterías antes de usar la red.</p>
                 </div>
             </div>
             
             <div class="process-item">
                 <div class="process-icon">
-                    <i class="fas fa-tachometer-alt"></i>
+                    <i class="fas fa-university"></i>
                 </div>
                 <div class="process-text">
-                    <h3>4. Gestión Inteligente</h3>
-                    <p>El controlador regula carga/descarga optimizando la vida útil de las baterías.</p>
+                    <h3>4. Backup en Cortes</h3>
+                    <p>Si hay corte de luz, las baterías alimentan circuitos esenciales automáticamente.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Componentes Específicos -->
+    <!-- Modos de Operación -->
     <section class="section">
         <div class="section-title">
-            <h2>Componentes del Sistema Off-Grid</h2>
-            <p>Elementos esenciales para tu independencia energética</p>
+            <h2>Modos de Operación Inteligente</h2>
+            <p>Tu sistema se adapta automáticamente a cada situación</p>
         </div>
         
-        <div class="components-grid">
-            <div class="component-card">
-                <div class="component-icon">
-                    <i class="fas fa-solar-panel"></i>
+        <div class="operation-modes">
+            <div class="mode-card">
+                <div class="mode-header">
+                    <i class="fas fa-sun"></i>
+                    <h4>Modo Solar</h4>
                 </div>
-                <h3>Paneles Solares</h3>
-                <p>Módulos de alta eficiencia dimensionados según tu consumo y ubicación geográfica.</p>
+                <p>Prioriza el consumo de energía solar directa. Excedentes cargan baterías.</p>
             </div>
             
-            <div class="component-card">
-                <div class="component-icon">
-                    <i class="fas fa-car-battery"></i>
+            <div class="mode-card">
+                <div class="mode-header">
+                    <i class="fas fa-battery-half"></i>
+                    <h4>Modo Batería</h4>
                 </div>
-                <h3>Banco de Baterías</h3>
-                <p>Baterías de litio (larga duración) o plomo-ácido (económicas) para almacenamiento.</p>
+                <p>En horario punta o noches, consume de baterías para maximizar ahorro.</p>
             </div>
             
-            <div class="component-card">
-                <div class="component-icon">
-                    <i class="fas fa-cogs"></i>
+            <div class="mode-card">
+                <div class="mode-header">
+                    <i class="fas fa-plug"></i>
+                    <h4>Modo Red</h4>
                 </div>
-                <h3>Controlador de Carga</h3>
-                <p>Regula la carga de las baterías evitando sobrecargas y descargas profundas.</p>
+                <p>Cuando baterías están bajas, usa energía de red de forma eficiente.</p>
             </div>
             
-            <div class="component-card">
-                <div class="component-icon">
-                    <i class="fas fa-exchange-alt"></i>
+            <div class="mode-card">
+                <div class="mode-header">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Modo Backup</h4>
                 </div>
-                <h3>Inversor Off-Grid</h3>
-                <p>Convierte la energía DC de las baterías a AC para tus electrodomésticos.</p>
+                <p>En cortes de luz, aísla de la red y alimenta con baterías automáticamente.</p>
             </div>
         </div>
     </section>
@@ -180,33 +181,33 @@
     <!-- Beneficios -->
     <section class="section" style="background-color: var(--light);">
         <div class="section-title">
-            <h2>Ventajas del Sistema Off-Grid</h2>
-            <p>Libertad energética sin límites</p>
+            <h2>Ventajas del Sistema Híbrido</h2>
+            <p>La solución más completa del mercado</p>
         </div>
         
         <div class="benefits-grid">
             <div class="benefit-card">
-                <i class="fas fa-independence"></i>
-                <h4>Independencia Total</h4>
-                <p>Cero facturas de luz y total independencia de cortes o problemas de la red.</p>
+                <i class="fas fa-user-shield"></i>
+                <h4>Protección Total</h4>
+                <p>Cero interrupciones durante cortes de luz. Tus equipos críticos siempre funcionan.</p>
             </div>
             
             <div class="benefit-card">
-                <i class="fas fa-map-marker-alt"></i>
-                <h4>Instalación en Cualquier Lugar</h4>
-                <p>Lleva energía a lugares donde la red eléctrica nunca llegará.</p>
+                <i class="fas fa-chart-line"></i>
+                <h4>Máxima Economía</h4>
+                <p>Reduce tu dependencia de la red en horarios de tarifa más alta.</p>
             </div>
             
             <div class="benefit-card">
-                <i class="fas fa-bolt"></i>
-                <h4>Energía 24/7</h4>
-                <p>Electricidad continua día y noche, sin interrupciones.</p>
+                <i class="fas fa-brain"></i>
+                <h4>Inteligencia Automática</h4>
+                <p>El sistema decide automáticamente la fuente óptima de energía.</p>
             </div>
             
             <div class="benefit-card">
-                <i class="fas fa-shield-alt"></i>
-                <h4>Preparado para Emergencias</h4>
-                <p>Sistema resiliente ante desastres naturales o cortes prolongados.</p>
+                <i class="fas fa-expand-arrows-alt"></i>
+                <h4>Escalable</h4>
+                <p>Puedes empezar pequeño y agregar más baterías según tus necesidades.</p>
             </div>
         </div>
     </section>
@@ -215,35 +216,36 @@
     <section class="section">
         <div class="section-title">
             <h2>¿Para quién es Ideal?</h2>
-            <p>Perfecto para estos casos específicos</p>
+            <p>La solución perfecta para estos casos</p>
         </div>
         
         <div class="ideal-grid">
             <div class="ideal-card">
-                <i class="fas fa-cabin"></i>
-                <h4>Cabañas y Refugios</h4>
-                <p>Viviendas en zonas rurales sin acceso a la red eléctrica.</p>
+                <i class="fas fa-home"></i>
+                <h4>Hogares con Cortes Frecuentes</h4>
+                <p>Protege tu refrigerador, internet y equipos esenciales.</p>
             </div>
             
             <div class="ideal-card">
-                <i class="fas fa-tractor"></i>
-                <h4>Campos y Agricultura</h4>
-                <p>Bombeo de agua, iluminación y equipos en zonas agrícolas.</p>
+                <i class="fas fa-briefcase-medical"></i>
+                <h4>Equipos Médicos</h4>
+                <p>Oxígeno, refrigeración de medicinas, equipos de monitoreo.</p>
             </div>
             
             <div class="ideal-card">
-                <i class="fas fa-campground"></i>
-                <h4>Turismo Aventura</h4>
-                <p>Ecolodges, campings y proyectos de turismo sostenible.</p>
+                <i class="fas fa-store"></i>
+                <h4>Comercios Críticos</h4>
+                <p>Restaurantes, farmacias, tiendas que no pueden parar.</p>
             </div>
             
             <div class="ideal-card">
-                <i class="fas fa-tools"></i>
-                <h4>Proyectos Especiales</h4>
-                <p>Mineria, telecomunicaciones y proyectos de investigación.</p>
+                <i class="fas fa-desktop"></i>
+                <h4>Home Office</h4>
+                <p>Protege tu computador, internet y equipos de trabajo.</p>
             </div>
         </div>
     </section>
 
 </body>
 </html>
+
