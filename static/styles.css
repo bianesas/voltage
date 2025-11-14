@@ -325,6 +325,15 @@ header {
     text-align: center;
 }
 
+/* Resaltar la pregunta activa y sus iconos para mayor claridad */
+.test-step.active .test-question h3 {
+    color: var(--secondary);
+}
+
+.test-step.active .option-card i {
+    color: var(--secondary);
+}
+
 .question-subtitle {
     color: var(--gray);
     text-align: center;
