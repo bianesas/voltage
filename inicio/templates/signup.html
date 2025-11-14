@@ -1,53 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Registro</title>
-    <style>
-        .signup-container {
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        input {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-        }
-        .error {
-            color: red;
-            font-size: 12px;
-            margin-top: 5px;
-        }
-        .helptext {
-            color: #666;
-            font-size: 12px;
-            display: block;
-            margin-top: 5px;
-        }
-        button {
-            background-color: #28a745;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <div class="signup-container">
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Registro - Voltage{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="section-title">
         <h2>Registrarse</h2>
-        
+        <p>Crea tu cuenta para guardar resultados y solicitar cotizaciones.</p>
+    </div>
+
+    <div class="test-container" style="max-width:640px; margin:0 auto;">
         {% if form.errors %}
             <div style="color: red; margin-bottom: 15px;">
                 {% for field in form %}
@@ -60,7 +22,6 @@
 
         <form method="post">
             {% csrf_token %}
-            
             {% for field in form %}
             <div class="form-group">
                 <label for="{{ field.id_for_label }}">{{ field.label }}</label>
@@ -84,10 +45,12 @@
                 {% endif %}
             </div>
             {% endfor %}
-            
-            <button type="submit">Registrarse</button>
+
+            <div style="display:flex; justify-content:center; gap:0.5rem;">
+                <button type="submit" class="btn">Registrarse</button>
+            </div>
         </form>
-        
+
         <p style="text-align: center; margin-top: 15px;">
             ¿Ya tienes cuenta? <a href="{% url 'login' %}">Inicia sesión aquí</a>
         </p>
@@ -156,5 +119,5 @@
             updateSubmitState();
         })();
     </script>
-</body>
-</html>
+</section>
+{% endblock %}

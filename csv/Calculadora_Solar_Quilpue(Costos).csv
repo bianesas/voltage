@@ -1,0 +1,29 @@
+Item;Valor_USD;;https://enertik.com/cl/tienda/inversores/inversores-cargadores/con-regulador-solar-mppt/inversor-cargador-mppt-hibrido-backup-12v-220v-1500w-premium/;;
+Precio_panel_USD_unitario;90000;;;;
+Precio_inversor;584400;Depende de otra formula;Calculos;offgrid / hibrido;ongrid
+Precio_bateria;1.890.000;;Costo_total_paneles_USD;720000;810000
+;;;Costo_inversor_USD;584400;584400
+Costo instalaci�n y materiales;2000000;;Costo_baterias_USD;1.890.000;0
+;;;Costo_instalaci�n_USD_total;2000000;2000000
+;;;Costo total;7194400;3394400
+;;;;;
+;;;Ahorro anual;1485545,985;1485545,985
+;;;ROI;4,84293322;2,284951145
+;;;;;
+;;;;;calcular excedente
+;;;;;
+;;;;;
+;KW;24V;48V;;
+inversor ;1000;190800;;;
+;2000 pwm;246000;;;
+;3000 mppt;372700;;;
+;4000;x;x;;
+;5000;x;584400;;
+;6000;x;991000;;
+;7200;x;1115000;;
+;;;;;
+;;;;;
+Bater�a;Ah;24V;48V;;
+;100;;1.890.000;Bater�a Litio 300Ah 48V 15KWh Nimac;
+;200;;;;
+;300;;;;

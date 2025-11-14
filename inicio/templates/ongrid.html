@@ -9,11 +9,10 @@
     <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="nav-container">
             <div class="logo">
-                <a href="index.html" style="text-decoration: none; color: inherit;">
+                <a href="{% url 'home' %}" style="text-decoration: none; color: inherit;">
                     Voltage<span>energía de todos</span>
                 </a>
             </div>
@@ -21,19 +20,19 @@
                 <div class="dropdown">
                     <a href="#">Paneles <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
-                        <a href="comofuncionan.html">Como funcionan</a>
-                        <a href="sistemaongrid.html">Sistema On-grid</a>
-                        <a href="sistemaoffgrid.html">Sistema Off-grid</a>
-                        <a href="sistemahibrido.html">Sistema híbrido</a>
+                        <a href="{% url 'paneles' %}">Como funcionan</a>
+                        <a href="{% url 'ongrid' %}">Sistema On-grid</a>
+                        <a href="{% url 'offgrid' %}">Sistema Off-grid</a>
+                        <a href="{% url 'hibrido' %}">Sistema híbrido</a>
                     </div>
                 </div>
                 <div class="dropdown">
                     <a href="#">Quienes somos <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
-                        <a href="nuestra-historia.html">Nuestra historia</a>
+                        <a href="{% url 'about' %}">Nuestra historia</a>
                     </div>
                 </div>
-                <a href="index.html#test">Test</a>
+                <a href="home.html#test">Test</a>
             </nav>
         </div>
     </header>

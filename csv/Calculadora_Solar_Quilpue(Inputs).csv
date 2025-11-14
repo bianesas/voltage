@@ -1,0 +1,15 @@
+Parámetro;Valor;;;
+Consumo_mensual_kWh;404,57;;calcula;
+Ciudad;Quilpué;encuesta;;Panel Solar Trina Monocristalino N-Type Topcon – Vertex+ 450W
+PSH_estimada_h/día;5;;entrega;Marca:
+Derating (eficiencia sistema);0,77;;const;SKU: TSM-450NEG9R.28
+Potencia_panel_W;450;;const;
+Autonomía (horas) ;24;;const;
+DOD (profundidad descarga);0,8;;const;
+Eficiencia_inversor;0,9;;const;
+Peak_load_kW (pico);3;;const;
+costo electricidad mensual;120000;encuesta;entrega;
+Cargo por consumo [kWh];293,65;;dic;
+cargo fijo;1196,96;;dic;
+Porcentaje de cobertura deseada;100;encuesta;entrega;
+Consumo_mensual_kWh;404,57;404,573608;entrega;

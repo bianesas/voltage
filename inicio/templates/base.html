@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Voltage{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">Voltage<span>energía de todos</span></div>
+            <nav class="nav-links">
+                <div class="dropdown">
+                    <a href="#">Paneles <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'paneles' %}">Como funcionan</a>
+                        <a href="{% url 'ongrid' %}">Sistema On-grid</a>
+                        <a href="{% url 'offgrid' %}">Sistema Off-grid</a>
+                        <a href="{% url 'hibrido' %}">Sistema híbrido</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#">Quienes somos <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'about' %}">Nuestra historia</a>
+                    </div>
+                </div>
+                <a href="#legal">Marco Legal</a>
+
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Buscar...">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                
+                <a href="{% url 'login' %}" class="account-link">
+                    <i class="fas fa-user"></i>
+                    Cuenta
+                </a>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Voltage</h3>
+                <p>Energía limpia y accesible para todos los chilenos. Contribuyendo a un futuro más sostenible.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Enlaces rápidos</h3>
+                <div class="footer-links">
+                    <a href="#">Inicio</a>
+                    <a href="#test">Test de paneles</a>
+                    <a href="#legal">Marco Legal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>

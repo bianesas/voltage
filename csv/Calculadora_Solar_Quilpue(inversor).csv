@@ -1,0 +1,63 @@
+;Consumo mensual (kWh/mes);404,57;;calculado;;;;;
+;Horas sol pico HSP (h/día);5;;entregado;;;;;C15 — Energía diaria
+;Potencia panel (W);450;;entregado;;;;;=C1/30
+;Eficiencia sistema (0-1);0,77;;const;;;;;
+;Tmin (°C);-10;;encuesta;;;;;Convierte tu consumo mensual a consumo por día (kWh/día).
+;Voc panel (V);52,9;;Const;;;;;Sirve para saber cuánta energía tienes que producir diariamente con paneles.
+;Coef Voc (%/°C);-0,24;;Const;;;;;C16 — Potencia por panel en kW
+;Vmp panel (V);44,6;;Const;;;;;=C3/1000
+;Isc panel (A);10,74;;Const;;;;;
+;I DC max inversor (A);25;;Const;;;;;Solo convierte la potencia del panel de W ? kW.
+;Voc max inversor (V);600;;Const;;;;;C17 — Energía diaria de 1 panel
+;Vmp MPPT max (V);480;;Const;;;;;=C3/1000 * HSP * eficiencia
+;Vmp MPPT min (V);200;;Const;;;;;
+;;;;;;;;;Cuánta energía produce un solo panel en un día típico teniendo en cuenta horas de sol y pérdidas.
+;Energía diaria;13,48566667;;calculado;;;;;C18 — Número de paneles
+;Potencia por panel en kW;0,45;;calculado;;;;;=CEILING(C15/C17)
+;Energía diaria de 1 panel;1,7325;;calculado;;;;;
+;Número de paneles;7,8;;calculado;;;;;Cuántos paneles necesitas para cubrir tu consumo diario (se redondea hacia arriba).
+;Potencia DC total;3,51;;calculado;;;;;C19 — Potencia DC total
+;;;;;;;;;=C18 * C3 / 1000
+;;;;;;;;;
+;;;;;;;;;Cuánta potencia en kW tendrá tu arreglo con todos los paneles sumados.
+;Voc del panel a temperatura mínima;57,3436;;calculado;;;;;C23 — Voc del panel a temperatura mínima
+;Vmp del panel a Tmin;48,3464;;calculado;;;;;Cuando hace frío el panel da más tensión. Esta fórmula corrige Voc según Tmin.
+;N° máximo de paneles en serie por Voc;10;;calculado;;;;;Esto se usa para asegurar que el inversor no se queme por sobrevoltaje en invierno.
+;Corriente de un string con factor de seguridad;13,425;;calculado;;;;;C24 — Vmp del panel a Tmin
+;Máximo strings en paralelo permitidos;2;;calculado;;;;;Similar al anterior pero con Vmp (para MPPT — rango donde trabaja el inversor).
+;;;;;;;;;C25 — N° máximo de paneles en serie por Voc
+;Rango permitido de paneles en serie;4,2;;calculado;;;;;INT(inversor_Voc_max / Voc_frío)
+;Rango permitido de paneles en serie;9;;calculado;;;;;
+;Rango permitido de paneles en serie;10;;calculado;;;;;Cuántos paneles se pueden poner en serie sin pasar el límite del inversor en frío.
+;Rango permitido de paneles en serie;9;;calculado;;;;;C26 — Corriente de un string con factor de seguridad
+;Nserie recomendada;9;;calculado;;;;;La normativa manda multiplicar por 1,25.
+;Strings necesarios;0,9;;calculado;;;;;Esto se usa para ver si el inversor soporta la corriente de strings en paralelo.
+;Strings máximos permitidos (Calculo);13,425;;calculado;;;;;C27 — Máximo strings en paralelo permitidos
+;Srings máximos permitidos;1;;calculado;;;;;INT( I_DC_max_inversor / I_string_safety )
+;Check seguridad (OK / EXCEDE);OK;;buleano;;;;;
+;Inversor recomendado (kW);3,87;;calculado;;;;;Checa si puedes poner los strings que necesitas sin pasar amperaje máximo del inversor.
+;precio panel;180000;;calculado;;;;;C29 / C30 / C31 / C32 — Rango permitido de paneles en serie
+;precio inversor;800000;;calculado;;;;;Estos comparan Vmp y Voc del inversor para encontrar el número de paneles por string que está dentro del rango seguro.
+;costo total estimado del sistema (muy básico);803510;;;;;;;C33 — Nserie recomendada
+;Resumen;"Paneles: 7,8 de 450W; Config: 9 en serie × 0,9 strings; Inversor: 3,87 kW; Costo: 803510";;;;;;;Si el rango es válido, este será el número de paneles por string que cumple todas las condiciones eléctricas.
+;;;;;;;;;Si sale “0”, significa que con ese panel e inversor no se puede configurar un string válido ? hay que cambiar criterios.
+;;;;;;;;;C34 — Strings necesarios
+;;;;;;;;;Cuántos strings debes armar para conseguir el total de paneles requeridos.
+;;;;;;;;;C36 — Strings máximos permitidos
+;;;;;;;;;Lo máximo que el inversor acepta en paralelo por límite de corriente DC.
+;;;;;;;;;C37 — Check seguridad (OK / EXCEDE)
+;;;;;;;;;Compara
+;;;;;;;;;C34
+;;;;;;;;;(lo que necesitas) con
+;;;;;;;;;C36
+;;;;;;;;;(lo que permite el inversor).
+;;;;;;;;;OK ? el diseño es seguro
+;;;;;;;;;EXCEDE ? no cumple electricidad ? hay que cambiar serie/otro inversor
+;;;;;;;;;C38 — Inversor recomendado (kW)
+;;;;;;;;;Potencia DC total × 1.10 (10% de sobredimensionamiento recomendado).
+;;;;;;;;;C39–C41 — Costos
+;;;;;;;;;C39 precio por panel
+;;;;;;;;;C40 precio inversor
+;;;;;;;;;C41 costo total estimado del sistema (muy básico)
+;;;;;;;;;C42 — Resumen
+;;;;;;;;;Texto compacto con el diseño: cuántos paneles, en qué serie-paralelo, qué inversor y costo.

@@ -1,0 +1,20 @@
+Consumo mensual (kWh/mes);404,57;;calculado
+Autonomía (horas) ;24;;const
+Voltaje sistema (48 - 24);48;;calcuña
+DoD (0.9 para litio);0,8;;const
+Eficiencia inversor (0.95 típico);0,95;;const
+Margen (1.1 si quieres +10%);1,1;;const
+;;;
+;;;
+;;;
+;;;
+;;;
+;;;
+;;;
+;;;
+Consumo diario;13,48566667;;calcula
+Energía requerida desde batería (antes de DoD);14,1954386;;calcula
+Energía nominal de batería sin margen;17,74429825;;calcula
+Energía recomendada con margen;19,51872807;;calcula
+Ah requeridos sin margen;369,6728801;;calcula
+Ah requeridos con margen (recomendado);406,6401681;;calcula
