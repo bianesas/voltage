@@ -29,13 +29,8 @@
                     </div>
                 </div>
                 <a href="#legal">Marco Legal</a>
-    
-                <div class="search-container">
-                    <input type="text" id="search-input" placeholder="Buscar...">
-                    <button class="search-btn">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
+                
+                <!-- Barra de búsqueda eliminada -->
                 
                 <a href="{% url 'login' %}" class="account-link">
                     <i class="fas fa-user"></i>
@@ -56,261 +51,261 @@
         </div>
     </section>
 
-<section id="test" class="section">
-    <div class="section-title">
-        <h2>Descubre tu solución perfecta</h2>
-        <p>Responde este breve test para encontrar el sistema solar ideal para tu hogar</p>
-    </div>
-    
-    <div class="test-container">
-    <div class="test-step active" id="step1">
-            <div class="test-progress">
-                <div class="progress-step active">1</div>
-                <div class="progress-step">2</div>
-                <div class="progress-step">3</div>
-                <div class="progress-step">4</div>
-                <div class="progress-step">5</div>
-            </div>
-            
-            <div class="test-question">
-                <h3>¿Qué uso principal le darías al panel solar?</h3>
-                <div class="options-grid">
-                    <div class="option-card" data-value="reducir-costo">
-                        <i class="fas fa-money-bill-wave"></i>
-                        <span>Reducir el costo de la luz</span>
-                    </div>
-                    <div class="option-card" data-value="vender-excedente">
-                        <i class="fas fa-dollar-sign"></i>
-                        <span>Vender el excedente de energía</span>
-                    </div>
-                    <div class="option-card" data-value="cortes-luz">
-                        <i class="fas fa-bolt"></i>
-                        <span>Independencia en cortes de luz</span>
-                    </div>
-                    <div class="option-card" data-value="independencia-empresas">
-                        <i class="fas fa-sun"></i>
-                        <span>Independencia energética de las empresas</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="btn-container">
-                <button class="btn btn-secondary" disabled>Atrás</button>
-                <button class="btn next-btn">Continuar</button>
-            </div>
+    <section id="test" class="section">
+        <div class="section-title">
+            <h2>Descubre tu solución perfecta</h2>
+            <p>Responde este breve test para encontrar el sistema solar ideal para tu hogar</p>
         </div>
-
-    <div class="test-step" id="step2">
-            <div class="test-progress">
-                <div class="progress-step completed">1</div>
-                <div class="progress-step active">2</div>
-                <div class="progress-step">3</div>
-                <div class="progress-step">4</div>
-                <div class="progress-step">5</div>
-            </div>
-            
-            <div class="test-question">
-                <h3>¿Tienes un panel solar?</h3>
-                <div class="options-grid">
-                    <div class="option-card" data-value="no">No</div>
-                    <div class="option-card" data-value="si">Sí</div>
+        
+        <div class="test-container">
+            <div class="test-step active" id="step1">
+                <div class="test-progress">
+                    <div class="progress-step active">1</div>
+                    <div class="progress-step">2</div>
+                    <div class="progress-step">3</div>
+                    <div class="progress-step">4</div>
+                    <div class="progress-step">5</div>
                 </div>
-            </div>
-            
-            <div class="btn-container">
-                <button class="btn btn-secondary prev-btn">Atrás</button>
-                <button class="btn next-btn">Continuar</button>
-            </div>
-        </div>
-
-    <div class="test-step" id="step2-1">
-            <div class="test-progress">
-                <div class="progress-step completed">1</div>
-                <div class="progress-step completed">2</div>
-                <div class="progress-step active">2.1</div>
-                <div class="progress-step">3</div>
-                <div class="progress-step">4</div>
-            </div>
-            
-            <div class="test-question">
-                <h3>Aproximadamente ¿cuánto porcentaje del gasto de luz ahorra?</h3>
-                <div class="options-grid">
-                    <div class="option-card" data-value="50">50%</div>
-                    <div class="option-card" data-value="75">75%</div>
-                    <div class="option-card" data-value="100">100%</div>
-                    <div class="option-card" data-value="nose">No sé</div>
-                </div>
-            </div>
-            
-            <div class="btn-container">
-                <button class="btn btn-secondary prev-btn">Atrás</button>
-                <button class="btn next-btn">Continuar</button>
-            </div>
-        </div>
-
-    <div class="test-step" id="step3">
-            <div class="test-progress">
-                <div class="progress-step completed">1</div>
-                <div class="progress-step completed">2</div>
-                <div class="progress-step completed">2.1</div>
-                <div class="progress-step active">3</div>
-                <div class="progress-step">4</div>
-            </div>
-            
-            <div class="test-question">
-                <h3>¿Qué porcentaje de luz te gustaría ahorrar?</h3>
-                <div class="options-grid">
-                    <div class="option-card" data-value="50-futuro">
-                        <div class="percentage-circle">50%</div>
-                        <span>Reducción moderada</span>
-                    </div>
-                    <div class="option-card" data-value="75-futuro">
-                        <div class="percentage-circle">75%</div>
-                        <span>Reducción significativa</span>
-                    </div>
-                    <div class="option-card" data-value="100-futuro">
-                        <div class="percentage-circle">100%</div>
-                        <span>Independencia total</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="btn-container">
-                <button class="btn btn-secondary prev-btn">Atrás</button>
-                <button class="btn next-btn">Continuar</button>
-            </div>
-        </div>
-
-    <div class="test-step" id="step4">
-            <div class="test-progress">
-                <div class="progress-step completed">1</div>
-                <div class="progress-step completed">2</div>
-                <div class="progress-step completed">2.1</div>
-                <div class="progress-step completed">3</div>
-                <div class="progress-step active">4</div>
-            </div>
-            
-            <div class="test-question">
-                <h3>¿Cuánto gastas al mes en luz aproximadamente en invierno?</h3>
                 
-                <div class="input-text-container">
-                    <div class="currency-symbol">
-                        <input type="text" 
-                               class="amount-input" 
-                               id="gasto-luz" 
-                               placeholder="Ej: 45000"
-                               inputmode="numeric">
+                <div class="test-question">
+                    <h3>¿Qué uso principal le darías al panel solar?</h3>
+                    <div class="options-grid">
+                        <div class="option-card" data-value="reducir-costo">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>Reducir el costo de la luz</span>
+                        </div>
+                        <div class="option-card" data-value="vender-excedente">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>Vender el excedente de energía</span>
+                        </div>
+                        <div class="option-card" data-value="cortes-luz">
+                            <i class="fas fa-bolt"></i>
+                            <span>Independencia en cortes de luz</span>
+                        </div>
+                        <div class="option-card" data-value="independencia-empresas">
+                            <i class="fas fa-sun"></i>
+                            <span>Independencia energética de las empresas</span>
+                        </div>
                     </div>
-                    <p class="input-hint">Ingresa el monto aproximado en pesos chilenos</p>
+                </div>
+                
+                <div class="btn-container">
+                    <button class="btn btn-secondary" disabled>Atrás</button>
+                    <button class="btn next-btn">Continuar</button>
                 </div>
             </div>
-            
-            <div class="btn-container">
-                <button class="btn btn-secondary prev-btn">Atrás</button>
-                <button class="btn next-btn">Continuar</button>
-            </div>
-        </div>
 
-    <div class="test-step" id="step5">
-            <div class="test-progress">
-                <div class="progress-step completed">1</div>
-                <div class="progress-step completed">2</div>
-                <div class="progress-step completed">2.1</div>
-                <div class="progress-step completed">3</div>
-                <div class="progress-step completed">4</div>
-                <div class="progress-step active">5</div>
-            </div>
-            
-            <div class="test-question">
-                <h3>¿En qué comuna vives?</h3>
-                <p class="question-subtitle">Selecciona tu provincia y luego tu comuna</p>
+            <div class="test-step" id="step2">
+                <div class="test-progress">
+                    <div class="progress-step completed">1</div>
+                    <div class="progress-step active">2</div>
+                    <div class="progress-step">3</div>
+                    <div class="progress-step">4</div>
+                    <div class="progress-step">5</div>
+                </div>
                 
-                <div class="location-selector">
-                    <div class="form-group">
-                        <label for="provincia-select">Provincia:</label>
-                        <select id="provincia-select" class="form-control">
-                            <option value="">Selecciona una provincia</option>
-                            <option value="valparaiso">Valparaíso</option>
-                            <option value="marga-marga">Marga Marga</option>
-                            <option value="quillota">Quillota</option>
-                            <option value="san-antonio">San Antonio</option>
-                            <option value="san-felipe">San Felipe de Aconcagua</option>
-                            <option value="los-andes">Los Andes</option>
-                            <option value="petorca">Petorca</option>
-                        </select>
+                <div class="test-question">
+                    <h3>¿Tienes un panel solar?</h3>
+                    <div class="options-grid">
+                        <div class="option-card" data-value="no">No</div>
+                        <div class="option-card" data-value="si">Sí</div>
+                    </div>
+                </div>
+                
+                <div class="btn-container">
+                    <button class="btn btn-secondary prev-btn">Atrás</button>
+                    <button class="btn next-btn">Continuar</button>
+                </div>
+            </div>
+
+            <div class="test-step" id="step2-1">
+                <div class="test-progress">
+                    <div class="progress-step completed">1</div>
+                    <div class="progress-step completed">2</div>
+                    <div class="progress-step active">2.1</div>
+                    <div class="progress-step">3</div>
+                    <div class="progress-step">4</div>
+                </div>
+                
+                <div class="test-question">
+                    <h3>Aproximadamente ¿cuánto porcentaje del gasto de luz ahorra?</h3>
+                    <div class="options-grid">
+                        <div class="option-card" data-value="50">50%</div>
+                        <div class="option-card" data-value="75">75%</div>
+                        <div class="option-card" data-value="100">100%</div>
+                        <div class="option-card" data-value="nose">No sé</div>
+                    </div>
+                </div>
+                
+                <div class="btn-container">
+                    <button class="btn btn-secondary prev-btn">Atrás</button>
+                    <button class="btn next-btn">Continuar</button>
+                </div>
+            </div>
+
+            <div class="test-step" id="step3">
+                <div class="test-progress">
+                    <div class="progress-step completed">1</div>
+                    <div class="progress-step completed">2</div>
+                    <div class="progress-step completed">2.1</div>
+                    <div class="progress-step active">3</div>
+                    <div class="progress-step">4</div>
+                </div>
+                
+                <div class="test-question">
+                    <h3>¿Qué porcentaje de luz te gustaría ahorrar?</h3>
+                    <div class="options-grid">
+                        <div class="option-card" data-value="50-futuro">
+                            <div class="percentage-circle">50%</div>
+                            <span>Reducción moderada</span>
+                        </div>
+                        <div class="option-card" data-value="75-futuro">
+                            <div class="percentage-circle">75%</div>
+                            <span>Reducción significativa</span>
+                        </div>
+                        <div class="option-card" data-value="100-futuro">
+                            <div class="percentage-circle">100%</div>
+                            <span>Independencia total</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="btn-container">
+                    <button class="btn btn-secondary prev-btn">Atrás</button>
+                    <button class="btn next-btn">Continuar</button>
+                </div>
+            </div>
+
+            <div class="test-step" id="step4">
+                <div class="test-progress">
+                    <div class="progress-step completed">1</div>
+                    <div class="progress-step completed">2</div>
+                    <div class="progress-step completed">2.1</div>
+                    <div class="progress-step completed">3</div>
+                    <div class="progress-step active">4</div>
+                </div>
+                
+                <div class="test-question">
+                    <h3>¿Cuánto gastas al mes en luz aproximadamente en invierno?</h3>
+                    
+                    <div class="input-text-container">
+                        <div class="currency-symbol">
+                            <input type="text" 
+                                   class="amount-input" 
+                                   id="gasto-luz" 
+                                   placeholder="Ej: 45000"
+                                   inputmode="numeric">
+                        </div>
+                        <p class="input-hint">Ingresa el monto aproximado en pesos chilenos</p>
+                    </div>
+                </div>
+                
+                <div class="btn-container">
+                    <button class="btn btn-secondary prev-btn">Atrás</button>
+                    <button class="btn next-btn">Continuar</button>
+                </div>
+            </div>
+
+            <div class="test-step" id="step5">
+                <div class="test-progress">
+                    <div class="progress-step completed">1</div>
+                    <div class="progress-step completed">2</div>
+                    <div class="progress-step completed">2.1</div>
+                    <div class="progress-step completed">3</div>
+                    <div class="progress-step completed">4</div>
+                    <div class="progress-step active">5</div>
+                </div>
+                
+                <div class="test-question">
+                    <h3>¿En qué comuna vives?</h3>
+                    <p class="question-subtitle">Selecciona tu provincia y luego tu comuna</p>
+                    
+                    <div class="location-selector">
+                        <div class="form-group">
+                            <label for="provincia-select">Provincia:</label>
+                            <select id="provincia-select" class="form-control">
+                                <option value="">Selecciona una provincia</option>
+                                <option value="valparaiso">Valparaíso</option>
+                                <option value="marga-marga">Marga Marga</option>
+                                <option value="quillota">Quillota</option>
+                                <option value="san-antonio">San Antonio</option>
+                                <option value="san-felipe">San Felipe de Aconcagua</option>
+                                <option value="los-andes">Los Andes</option>
+                                <option value="petorca">Petorca</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="comuna-select">Comuna:</label>
+                            <select id="comuna-select" class="form-control" disabled>
+                                <option value="">Primero selecciona una provincia</option>
+                            </select>
+                        </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="comuna-select">Comuna:</label>
-                        <select id="comuna-select" class="form-control" disabled>
-                            <option value="">Primero selecciona una provincia</option>
-                        </select>
+                    <div class="selected-location" id="selected-location" style="display: none;">
+                        <div class="location-confirmation">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Seleccionado: <strong id="location-text"></strong></span>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="selected-location" id="selected-location" style="display: none;">
-                    <div class="location-confirmation">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Seleccionado: <strong id="location-text"></strong></span>
-                    </div>
+                <div class="btn-container">
+                    <button class="btn btn-secondary prev-btn">Atrás</button>
+                    <button class="btn" id="finish-btn" disabled>Ver Resultado</button>
                 </div>
             </div>
-            
-            <div class="btn-container">
-                <button class="btn btn-secondary prev-btn">Atrás</button>
-                <button class="btn" id="finish-btn" disabled>Ver Resultado</button>
-            </div>
-        </div>
 
-    <div class="test-step" id="step6">
-            <div class="test-progress">
-                <div class="progress-step completed">1</div>
-                <div class="progress-step completed">2</div>
-                <div class="progress-step completed">2.1</div>
-                <div class="progress-step completed">3</div>
-                <div class="progress-step completed">4</div>
-                <div class="progress-step completed">5</div>
-            </div>
-            
-            <div class="welcome-container">
-                <h1>¡Perfecto! Tenemos tu solución</h1>
-                <div class="results-actions">
-                    <button class="btn result-btn">
-                        <i class="fas fa-download"></i>
-                        Descargar recomendación
-                    </button>
-                    <button class="btn result-btn">
-                        <i class="fas fa-file-invoice-dollar"></i>
-                        Solicitar cotización
-                    </button>
+            <div class="test-step" id="step6">
+                <div class="test-progress">
+                    <div class="progress-step completed">1</div>
+                    <div class="progress-step completed">2</div>
+                    <div class="progress-step completed">2.1</div>
+                    <div class="progress-step completed">3</div>
+                    <div class="progress-step completed">4</div>
+                    <div class="progress-step completed">5</div>
                 </div>
-                <div class="project-info">
-                    <h3>Tu sistema solar recomendado</h3>
-                    <p>Basado en tus respuestas, te recomendamos un sistema <strong>On-Grid de 3kW</strong> que te permitirá ahorrar aproximadamente <strong>75%</strong> en tu cuenta de luz.</p>
-                    <div class="recommendation-details">
-                        <div class="detail-item">
-                            <i class="fas fa-solar-panel"></i>
-                            <span>4-6 paneles solares</span>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-bolt"></i>
-                            <span>Inversor de 3kW</span>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-money-bill-wave"></i>
-                            <span>Ahorro estimado: $45.000 mensual</span>
+                
+                <div class="welcome-container">
+                    <h1>¡Perfecto! Tenemos tu solución</h1>
+                    <div class="results-actions">
+                        <button class="btn result-btn">
+                            <i class="fas fa-download"></i>
+                            Descargar recomendación
+                        </button>
+                        <button class="btn result-btn">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            Solicitar cotización
+                        </button>
+                    </div>
+                    <div class="project-info">
+                        <h3>Tu sistema solar recomendado</h3>
+                        <p>Basado en tus respuestas, te recomendamos un sistema <strong>On-Grid de 3kW</strong> que te permitirá ahorrar aproximadamente <strong>75%</strong> en tu cuenta de luz.</p>
+                        <div class="recommendation-details">
+                            <div class="detail-item">
+                                <i class="fas fa-solar-panel"></i>
+                                <span>4-6 paneles solares</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-bolt"></i>
+                                <span>Inversor de 3kW</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>Ahorro estimado: $45.000 mensual</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="btn-container">
-                <button class="btn btn-secondary prev-btn">Volver a editar</button>
-                <button class="btn" onclick="location.reload()">Hacer otro test</button>
+                
+                <div class="btn-container">
+                    <button class="btn btn-secondary prev-btn">Volver a editar</button>
+                    <button class="btn" onclick="location.reload()">Hacer otro test</button>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <section class="section">
         <div class="section-title">
