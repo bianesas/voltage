@@ -15,7 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function saveResponse(step, value) {
         switch(step) {
-            case 1: testState.responses.usoPanel = value; break;
+            case 1: 
+                // No guardar aquí porque ya se guarda en selectOption
+                break;
             case 2: testState.responses.tienePanel = value; break;
             case '2.1': testState.responses.porcentajeActual = value; break;
             case 3: testState.responses.porcentajeDeseado = value; break;
@@ -63,7 +65,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function hasResponseForCurrentStep() {
         switch(testState.currentStep) {
-            case 1: return !!testState.responses.usoPanel;
+            case 1: 
+                // Para paso 1, validar que haya al menos una opción seleccionada
+                return testState.responses.usoPanel && testState.responses.usoPanel.length > 0;
             case 2: return !!testState.responses.tienePanel;
             case '2.1': return !!testState.responses.porcentajeActual;
             case 3: return !!testState.responses.porcentajeDeseado;
@@ -150,7 +154,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateFinishButton() { const finishBtn = document.getElementById('finish-btn'); if (finishBtn) finishBtn.disabled = !(testState.responses.provincia && testState.responses.comuna); }
 
-    function selectOption(card) { const step = testState.currentStep; const value = card.getAttribute('data-value'); card.closest('.options-grid').querySelectorAll('.option-card').forEach(opt => opt.classList.remove('selected')); card.classList.add('selected'); saveResponse(step, value); updateNextButton(); }
+    function selectOption(card) { 
+        const step = testState.currentStep; 
+        const value = card.getAttribute('data-value'); 
+        
+        // Si es el paso 1 (primera pregunta), permitir múltiple selección
+        if (step === 1) {
+            card.classList.toggle('selected'); // Alternar selección
+            
+            // Guardar todas las opciones seleccionadas
+            const selectedOptions = [];
+            card.closest('.options-grid').querySelectorAll('.option-card.selected').forEach(opt => {
+                selectedOptions.push(opt.getAttribute('data-value'));
+            });
+            
+            // Guardar como array en lugar de string único
+            testState.responses.usoPanel = selectedOptions.length > 0 ? selectedOptions : null;
+        } else {
+            // Para los otros pasos, mantener selección única
+            card.closest('.options-grid').querySelectorAll('.option-card').forEach(opt => opt.classList.remove('selected'));
+            card.classList.add('selected'); 
+            saveResponse(step, value);
+        }
+        
+        updateNextButton(); 
+    }
 
     function showStep(step) {
         document.querySelectorAll('.test-step').forEach(stepEl => stepEl.classList.remove('active'));
@@ -179,10 +207,14 @@ document.addEventListener('DOMContentLoaded', function() {
     function showResults() { const recommendation = calculateRecommendation(); displayRecommendation(recommendation); showStep(6); }
 
     function calculateRecommendation() {
-        const { porcentajeDeseado, usoPanel } = testState.responses;
+        const { usoPanel, porcentajeDeseado } = testState.responses;
+        
+        // Si seleccionó múltiples opciones, usar la más relevante
+        let usoPrincipal = Array.isArray(usoPanel) ? usoPanel[0] : usoPanel;
+        
         if (porcentajeDeseado === '50-futuro') return { sistema: 'On-Grid de 2kW', paneles: '3-4 paneles solares', ahorro: '50%', costoMensual: '$30.000 mensual' };
         if (porcentajeDeseado === '75-futuro') return { sistema: 'On-Grid de 3kW', paneles: '4-6 paneles solares', ahorro: '75%', costoMensual: '$45.000 mensual' };
-        if (usoPanel === 'cortes-luz') return { sistema: 'Híbrido de 5kW con baterías', paneles: '8-10 paneles solares', ahorro: '90%', costoMensual: '$60.000 mensual' };
+        if (usoPrincipal === 'cortes-luz') return { sistema: 'Híbrido de 5kW con baterías', paneles: '8-10 paneles solares', ahorro: '90%', costoMensual: '$60.000 mensual' };
         return { sistema: 'Off-Grid de 4kW', paneles: '6-8 paneles solares', ahorro: '100%', costoMensual: '$55.000 mensual' };
     }
 
