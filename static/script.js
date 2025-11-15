@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function parseNumber(str) {
         if (!str) return NaN;
-        const cleaned = String(str).replace(/[^0-9\-\.]/g, '');
+        const cleaned = String(str).replace(/[^0-9]/g, ''); // Solo números
         const n = Number(cleaned);
         return isNaN(n) ? NaN : n;
     }
@@ -74,7 +74,8 @@ document.addEventListener('DOMContentLoaded', function() {
             case 4: {
                 const gastoVal = document.getElementById('gasto-luz') ? document.getElementById('gasto-luz').value : '';
                 const num = parseNumber(gastoVal);
-                return !isNaN(num) && num > 0;
+                console.log('Validando gasto:', gastoVal, '->', num); // Debug
+                return !isNaN(num) && num >= 1000; // Mínimo $1.000 pesos
             }
             case 5: return !!testState.responses.provincia && !!testState.responses.comuna;
             default: return true;
@@ -109,10 +110,26 @@ document.addEventListener('DOMContentLoaded', function() {
         const gastoInput = document.getElementById('gasto-luz');
         if (gastoInput) {
             gastoInput.addEventListener('input', function() {
-                const val = parseNumber(this.value);
-                testState.responses.gastoLuz = isNaN(val) ? null : val;
+                // Formatear el input mientras escribe
+                let value = this.value.replace(/[^0-9]/g, '');
+                if (value) {
+                    value = parseInt(value).toLocaleString('es-CL');
+                }
+                this.value = value;
+                
+                // Validar y guardar
+                const num = parseNumber(value);
+                testState.responses.gastoLuz = isNaN(num) ? null : num;
+                console.log('Gasto guardado:', testState.responses.gastoLuz); // Debug
+                
                 updateNextButton();
             });
+            
+            // También validar cuando pierde el foco
+            gastoInput.addEventListener('blur', function() {
+                updateNextButton();
+            });
+            
             updateNextButton();
         }
     }
@@ -202,7 +219,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function updateNextButton() { const hasResponse = hasResponseForCurrentStep(); const nextBtn = document.querySelector('.test-step.active .next-btn'); if (nextBtn) nextBtn.disabled = !hasResponse; }
+    function updateNextButton() { 
+        const hasResponse = hasResponseForCurrentStep(); 
+        const nextBtn = document.querySelector('.test-step.active .next-btn'); 
+        if (nextBtn) {
+            nextBtn.disabled = !hasResponse;
+            console.log('Botón siguiente:', hasResponse ? 'HABILITADO' : 'DESHABILITADO'); // Debug
+        }
+    }
 
     function showResults() { const recommendation = calculateRecommendation(); displayRecommendation(recommendation); showStep(6); }
 
